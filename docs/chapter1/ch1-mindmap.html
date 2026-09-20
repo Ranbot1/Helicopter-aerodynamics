@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 1 章 绪论 · 思维导图</title>
+<style>
+:root{
+  --bg:#f8fafc; --panel:#ffffff; --panel2:#f1f5f9; --line:#dbe3ea;
+  --txt:#1f2937; --dim:#5b6b7c; --dim2:#8494a3;
+  --c1:#0d9488; --c2:#2563eb; --c3:#7c3aed; --c4:#b45309;
+  --c5:#be185d; --c6:#15803d; --c7:#475569;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1b2230; --line:#2b3440;
+    --txt:#e6edf3; --dim:#9aa4b2; --dim2:#7d8794;
+    --c1:#2dd4bf; --c2:#60a5fa; --c3:#a78bfa; --c4:#fbbf24;
+    --c5:#f472b6; --c6:#4ade80; --c7:#94a3b8;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--txt);
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:13px;line-height:1.6;padding:20px 16px 40px;
+}
+.wrap{max-width:1040px;margin:0 auto}
+header{margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:12px}
+h1{font-size:18px;font-weight:600;letter-spacing:.4px}
+.sub{color:var(--dim);font-size:12px;margin-top:5px}
+.tools{display:flex;gap:8px;margin:12px 0 18px;flex-wrap:wrap}
+button{
+  background:var(--panel);color:var(--txt);border:1px solid var(--line);
+  border-radius:7px;padding:5px 12px;font-size:12px;cursor:pointer;
+  font-family:inherit;transition:border-color .15s,background .15s;
+}
+button:hover{border-color:var(--dim2);background:var(--panel2)}
+.tree{position:relative}
+.root{
+  display:inline-block;background:var(--panel2);border:1px solid var(--line);
+  border-radius:10px;padding:9px 20px;font-size:14px;font-weight:600;position:relative;
+}
+.root span{color:var(--dim);font-weight:400;font-size:12px;margin-left:10px}
+.trunk{position:absolute;left:24px;top:42px;bottom:6px;width:1px;background:var(--line)}
+.branches{list-style:none;padding-left:24px;margin-top:12px}
+.branch{position:relative;margin-bottom:12px}
+.branch::before{content:"";position:absolute;left:-24px;top:19px;width:24px;height:1px;background:var(--line)}
+.branch::after{content:"";position:absolute;left:-24px;top:19px;bottom:-12px;width:1px;background:var(--line)}
+.branch:last-child::after{display:none}
+.hd{
+  display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;
+  background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent,#888);
+  border-radius:9px;padding:8px 13px;transition:background .15s;
+}
+.hd:hover{background:var(--panel2)}
+.num{font-family:ui-monospace,Consolas,monospace;font-size:12px;font-weight:600;color:var(--accent,#888);min-width:32px}
+.ttl{font-size:13.5px;font-weight:600;flex:1}
+.tag{font-size:11px;color:var(--dim2);border:1px solid var(--line);border-radius:20px;padding:1px 8px}
+.arrow{color:var(--dim2);font-size:11px;transition:transform .18s}
+.branch.collapsed .arrow{transform:rotate(-90deg)}
+.kids{list-style:none;padding-left:20px;margin-top:6px}
+.branch.collapsed .kids{display:none}
+.kids li{position:relative;padding:3px 0 3px 15px;font-size:12.5px}
+.kids li::before{content:"";position:absolute;left:0;top:12px;width:8px;height:1px;background:var(--accent,#888);opacity:.55}
+.kt{color:var(--txt);font-weight:600}
+.kd{color:var(--dim)}
+.kids .grp{color:var(--accent,#888);font-size:11.5px;font-weight:600;letter-spacing:.3px;border-bottom:1px dashed var(--line);margin:9px 0 4px;padding-bottom:3px}
+.kids .grp::before{background:none}
+footer{margin-top:20px;color:var(--dim2);font-size:11.5px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>第 1 章 绪论 · 思维导图</h1>
+    <div class="sub">点击分支标题即可折叠／展开。完整版含 7 大分支、50 余个知识要点。</div>
+  </header>
+
+  <div class="tools">
+    <button onclick="toggleAll(false)">全部展开</button>
+    <button onclick="toggleAll(true)">全部折叠</button>
+    <button onclick="window.print()">打印 / 导出 PDF</button>
+  </div>
+
+  <div class="tree">
+    <div class="root">第 1 章 绪论<span>定义 → 历史 → 分类 → 划代 → 趋势 → 学科内容</span></div>
+    <div class="trunk"></div>
+    <ul class="branches">
+
+      <li class="branch" style="--accent:var(--c1)">
+        <div class="hd" onclick="tg(this)">
+          <span class="num">0</span><span class="ttl">本章总纲与学习目标</span>
+          <span class="tag">7 项目标</span><span class="arrow">▾</span>
+        </div>
+        <ul class="kids">
+          <li><span class="kt">核心问题</span><span class="kd">直升机如何诞生？哪些科学与技术突破使其得以发明和发展？如何工作？未来面临什么挑战与机遇？</span></li>
+          <li><span class="kt">目标 1–2</span><span class="kd">掌握直升机定义并能与其他飞行器区分；了解常见用途</span></li>
+          <li><span class="kt">目标 3–4</span><span class="kd">了解旋翼飞行器发展历史；掌握常见分类方法</span></li>
+          <li><span class="kt">目标 5–6</span><span class="kd">了解技术划代并掌握主要技术特征和指标；了解国内外技术发展趋势</span></li>
+          <li><span class="kt">目标 7</span><span class="kd">了解国内外著名直升机型号</span></li>
+        </ul>
+      </li>
+
+      <li class="branch" style="--accent:var(--c2)">
+        <div class="hd" onclick="tg(this)">
+          <span class="num">1.1</span><span class="ttl">引言：定义与学科定位</span>
+          <span class="tag">概念基石</span><span class="arrow">▾</span>
+        </div>
+        <ul class="kids">
+          <li><span class="kt">定义</span><span class="kd">依靠动力系统驱动旋翼旋转产生升力，并通过变距操纵改变旋翼的纵横向拉力及操纵力矩，具备垂直起降、空中悬停和向任意方向飞行能力的飞行器，属旋翼类飞行器</span></li>
+          <li class="grp">定义的三个关键特征</li>
+          <li><span class="kt">功能角度</span><span class="kd">具备垂直起降与空中悬停能力 → 垂直起降飞行器</span></li>
+          <li><span class="kt">升力来源</span><span class="kd">旋翼提供升力、牵引力和操纵力 → 旋翼飞行器</span></li>
+          <li><span class="kt">动力角度</span><span class="kd">旋翼由动力系统直接驱动旋转 → 与自转旋翼机的关键区别</span></li>
+          <li class="grp">学科定位</li>
+          <li><span class="kt">基础性</span><span class="kd">气动力主要来源于旋翼，故旋翼空气动力学是直升机技术领域中最基础、最重要的一环</span></li>
+          <li><span class="kt">影响面</span><span class="kd">飞行性能、飞行载荷、振动、稳定性、飞行品质、噪声</span></li>
+          <li><span class="kt">本书主线</span><span class="kd">以旋翼空气动力学特征与分析方法为中心，兼顾全机气动问题；理论可推广至螺旋桨、旋翼机</span></li>
+        </ul>
+      </li>
+
+      <li class="branch" style="--accent:var(--c3)">
+        <div class="hd" onclick="tg(this)">
+          <span class="num">1.2</span><span class="ttl">直升机发展简史</span>
+          <span class="tag">动力 + 操控 = 可控飞行</span><span class="arrow">▾</span>
+        </div>
+        <ul class="kids">
+          <li class="grp">1.2.1 古代起源</li>
+          <li><span class="kt">竹蜻蜓</span><span class="kd">约公元前 400 年，中国；公认的直升机最早雏形，14 世纪传入欧洲。靠旋转下推空气的反作用力获得升力；能量来自手掌动能，转速衰减快、飞行时间短；前倾前飞会向固定一侧倾倒</span></li>
+          <li><span class="kt">达·芬奇方案</span><span class="kd">15 世纪，螺旋式机翼装于垂直轴，转轴下推空气获得升力，指明正确思维方向；2019 年美国直升机协会竞赛证明其可行</span></li>
+          <li><span class="kt">时间坐标</span><span class="kd">真正可控飞行在 20 世纪 30 年代；成批生产与实际使用在 20 世纪 40 年代中期</span></li>
+          <li class="grp">1.2.2 18 世纪 · 模型探索</li>
+          <li><span class="kt">罗蒙诺索夫（1754）</span><span class="kd">改为共轴对转构型并加装缠绕式弹簧储能动力，飞得更久更高</span></li>
+          <li><span class="kt">洛努瓦（1783）</span><span class="kd">火鸡羽毛螺旋桨 + 十字弓式张紧弹簧的自起飞旋转翼玩具，爬升几米</span></li>
+          <li><span class="kt">共同进步</span><span class="kd">具备可储能的动力系统；旋翼采用共轴对转构型</span></li>
+          <li class="grp">1.2.3 19 世纪 · 动力与飞行原理</li>
+          <li><span class="kt">两条路线</span><span class="kd">旋转机翼下推空气实现垂直飞行 / 像鸟一样高速前飞</span></li>
+          <li><span class="kt">凯利</span><span class="kd">蒸汽动力四旋翼模型，动力不足未成功</span></li>
+          <li><span class="kt">菲利普斯</span><span class="kd">0.9 kg 蒸汽动力模型，首次实现发动机驱动的飞行</span></li>
+          <li><span class="kt">命名</span><span class="kd">1861.4.8 "Helicopter" 术语诞生（古斯塔夫，铝制蒸汽动力装置，从未离地）</span></li>
+          <li><span class="kt">爱迪生</span><span class="kd">科学试验得出：好的气动效率必须用大直径、小桨叶面积（低实度）的旋翼；必须用更强大的动力装置</span></li>
+          <li><span class="kt">世纪结论</span><span class="kd">蒸汽机无法提供充足动力</span></li>
+          <li class="grp">1.2.4 20 世纪初 · 实用化飞行</li>
+          <li><span class="kt">科尔尼（1907）</span><span class="kd">纵列式双旋翼，完成动力飞行器第一次载人垂直离地飞行；稳定性与操纵性缺陷，未自由飞行</span></li>
+          <li><span class="kt">布雷盖兄弟（1907）</span><span class="kd">短暂自由飞行，缺乏稳定性与有效控制方法</span></li>
+          <li><span class="kt">西科斯基（1909）</span><span class="kd">无人共轴原型，因振动与功率不足失败后转研固定翼</span></li>
+          <li><span class="kt">尤里耶夫（1912）</span><span class="kd">单旋翼带尾桨（革命性概念，因发动机不足未成功）；最早使用尾桨、最早提出自动倾斜器概念者之一（克罗科 1906 已注册专利）</span></li>
+          <li><span class="kt">挥舞铰</span><span class="kd">雷纳德提出、布雷盖 1908 获专利、西尔瓦 1923 首次成功用于旋翼，解决前飞时滚转方向升力不平衡</span></li>
+          <li><span class="kt">福克 FW-61（1937）</span><span class="kd">横列式双旋翼，人类第一种真正可操纵的直升机，也是第一架反复成功演示自转着陆的直升机</span></li>
+          <li><span class="kt">成败归因</span><span class="kd">内燃机的强大动力 + 多种旋翼操控机构的发明</span></li>
+          <li class="grp">1.2.5 推广与发展</li>
+          <li><span class="kt">VS-300</span><span class="kd">1939 年试飞成功，1940.3.13 实现自由飞行 → 直升机时代正式来临</span></li>
+          <li><span class="kt">Bell 47</span><span class="kd">1946 年获美国政府第一份直升机适航证</span></li>
+          <li><span class="kt">产业规模</span><span class="kd">到 2020 年全球民用 26 466 架、军用 20 519 架</span></li>
+        </ul>
+      </li>
+
+      <li class="branch" style="--accent:var(--c4)">
+        <div class="hd" onclick="tg(this)">
+          <span class="num">1.3</span><span class="ttl">直升机的分类</span>
+          <span class="tag">用途 · 构型 · 重量</span><span class="arrow">▾</span>
+        </div>
+        <ul class="kids">
+          <li class="grp">1.3.1 按用途</li>
+          <li><span class="kt">民用</span><span class="kd">物资运输、人员输送、搜索救援、观光游览、防火救火、空中指挥、警用警戒、巡逻控制、农林防护、资源探测、地质勘探、海上作业</span></li>
+          <li><span class="kt">民用优势</span><span class="kd">起降场地要求极低、可点到点部署；中短途运输效率高于固定翼；可低速飞行甚至悬停作业</span></li>
+          <li><span class="kt">应急救援</span><span class="kd">汶川地震、河南水灾中发挥关键作用；1983.1.9 山西平陆"单轮悬停"救 58 人；汶川"单轮着地"碎石坡救援；2017.8.3 江心鹅卵石堆救 2 人</span></li>
+          <li><span class="kt">军用</span><span class="kd">直升机首先用于军事：特种运输、对地攻击、舰载应用；通信中继、侦察预警、巡逻监视、战场投送、搜潜反潜、搜索救援、战术打击、特种作战</span></li>
+          <li><span class="kt">战术特性</span><span class="kd">低空机动性好、不依赖跑道；贴地机动（15 m 以下——"一树之高"）规避雷达、红外、光学与目视探测</span></li>
+          <li><span class="kt">战史标志</span><span class="kd">越南战争首次参战获"坦克杀手"之名（UH-1）；海湾战争多国部队 1800 余架、AH-64 协同坦克作战；2011.5.1 隐身改装的 MH-60 击毙本·拉登</span></li>
+          <li class="grp">1.3.2 按构型（全机布局）</li>
+          <li><span class="kt">六大构型</span><span class="kd">单旋翼、纵列式双旋翼、横列式双旋翼、共轴式双旋翼、复合式、新构型</span></li>
+          <li><span class="kt">旋翼</span><span class="kd">最重要部件，既提供升力又是操纵面</span></li>
+          <li><span class="kt">机身</span><span class="kd">装载机载设备与人员物资，并连接旋翼、尾桨、起落架等部件</span></li>
+          <li><span class="kt">尾桨</span><span class="kd">平衡旋翼旋转产生的反扭矩，稳定并操纵航向</span></li>
+          <li class="grp">1.3.3 其他分类</li>
+          <li><span class="kt">按最大起飞重量</span><span class="kd">小型 ≤2 t、轻型 2~4 t、中型 4~10 t、大型 10~20 t、重型 ≥20 t</span></li>
+          <li><span class="kt">其他维度</span><span class="kd">发动机数量、桨毂形式</span></li>
+        </ul>
+      </li>
+
+      <li class="branch" style="--accent:var(--c5)">
+        <div class="hd" onclick="tg(this)">
+          <span class="num">1.4</span><span class="ttl">直升机技术发展划代</span>
+          <span class="tag">四代 · 五项标准</span><span class="arrow">▾</span>
+        </div>
+        <ul class="kids">
+          <li><span class="kt">划代五项标准</span><span class="kd">旋翼技术水平、发动机技术水平、结构材料使用水平、航空电子系统技术水平、综合使用性能</span></li>
+          <li class="grp">第一代（40 年代初–50 年代中末期）：活塞发动机 + 木质桨叶</li>
+          <li><span class="kt">动力与材料</span><span class="kd">活塞发动机功重比约 1.3 kW/kg、体积大；金属铰链式桨毂；钢管/木材/布料桨叶，寿命仅数百小时</span></li>
+          <li><span class="kt">气动与结构</span><span class="kd">对称翼型、气动效率低，悬停效率约 0.6；全金属桁架式机身，空重比约 0.65</span></li>
+          <li><span class="kt">指标</span><span class="kd">振动 0.25g、噪声 110 dB、最大平飞速度约 200 km/h；机载设备简陋、机械操纵</span></li>
+          <li><span class="kt">代表机型</span><span class="kd">美国 Bell 47、苏联 Mi-4</span></li>
+          <li class="grp">第二代（60 年代初–70 年代中期）：涡轮轴发动机 + 金属桨叶</li>
+          <li><span class="kt">动力与材料</span><span class="kd">第一代涡轮轴发动机，功率重量比约 3.6 kW/kg、体积显著减小；金属桨叶寿命上千小时</span></li>
+          <li><span class="kt">气动与结构</span><span class="kd">非对称翼型 + 尖削、后掠桨尖，悬停效率 0.65~0.7；铝合金薄壁机身，空重比约 0.5</span></li>
+          <li><span class="kt">指标</span><span class="kd">振动 0.15g、噪声约 100 dB、最大平飞速度 250 km/h</span></li>
+          <li><span class="kt">代表机型</span><span class="kd">美国 UH-1、法国 SA321"超黄蜂"</span></li>
+          <li class="grp">第三代（70 年代中期–80 年代末）：复合材料桨叶 + 大规模集成电路</li>
+          <li><span class="kt">动力与材料</span><span class="kd">新一代涡轮轴 + 自由涡轮，耗油率 0.36 kg/(kW·h)；弹性轴承式桨毂替代金属铰链式，寿命数千小时</span></li>
+          <li><span class="kt">气动与航电</span><span class="kd">专用直升机翼型 + 大负扭转，悬停效率 &gt;0.7；机械与电子混合操纵，自动增稳增控普及；具备机动/贴地及全天候飞行能力</span></li>
+          <li><span class="kt">指标</span><span class="kd">振动 0.1g、噪声 95 dB、最大平飞速度 300 km/h</span></li>
+          <li><span class="kt">代表机型</span><span class="kd">中国直-9（法国海豚）、美国 UH-60A"黑鹰"</span></li>
+          <li class="grp">第四代（90 年代至今）：复合材料 + 电传操纵 + 隐身性能</li>
+          <li><span class="kt">动力与材料</span><span class="kd">先进第三代涡轮轴 + 全数字控制与监测，耗油率 0.28 kg/(kW·h)；碳纤维、凯芙拉桨叶寿命超过直升机寿命；复合材料比例达 70%</span></li>
+          <li><span class="kt">气动与操纵</span><span class="kd">BERP 桨尖（抛物线后掠、先前掠再后掠）；球柔性、无轴承桨毂广泛应用；无尾桨反扭矩系统开始应用；电传操纵取代机械式</span></li>
+          <li><span class="kt">指标</span><span class="kd">最大平飞速度超过 315 km/h；振动与噪声持续下降</span></li>
+          <li><span class="kt">代表机型</span><span class="kd">美国 S-92、欧洲 EH-101</span></li>
+          <li class="grp">重要提醒</li>
+          <li><span class="kt">三个标尺</span><span class="kd">振动水平、最大平飞速度、噪声水平持续改善</span></li>
+          <li><span class="kt">相对性</span><span class="kd">型号经持续升级后与原始型号"天壤之别"，不能轻率断言某架具体直升机属于第几代</span></li>
+        </ul>
+      </li>
+
+      <li class="branch" style="--accent:var(--c6)">
+        <div class="hd" onclick="tg(this)">
+          <span class="num">1.5</span><span class="ttl">直升机技术发展趋势</span>
+          <span class="tag">常规 + 新构型</span><span class="arrow">▾</span>
+        </div>
+        <ul class="kids">
+          <li class="grp">1.5.1 常规构型：更快、更重、更强、更隐身</li>
+          <li><span class="kt">更快</span><span class="kd">英国 BERP 桨尖用于"山猫"，1986 年创造 400.87 km/h 的常规构型最高飞行速度世界纪录</span></li>
+          <li><span class="kt">载重更大</span><span class="kd">苏联 Mi-26 系列，1977 年首飞，最大起飞重量 56 t，至今仍是最大、最重的在役直升机</span></li>
+          <li><span class="kt">隐身</span><span class="kd">美国 1988 年开始研制世界第一架隐身直升机 RAH-66"科曼奇"（1995 首飞）；虽停止研发，设计理念仍有指导意义</span></li>
+          <li><span class="kt">载荷—航程边界</span><span class="kd">现有直升机基本被限定在最大有效载荷与最大航程成反比的边界内；Mi-12 载重最大但航程很小，与 C-130J 相比航程与速度差距大</span></li>
+          <li><span class="kt">两处空白</span><span class="kd">大航程 + 中等载重区域、大载重 + 中等航程区域，是未来可能的发展方向</span></li>
+          <li class="grp">1.5.2 新构型与特殊用途旋翼飞行器</li>
+          <li><span class="kt">倾转旋翼机</span><span class="kd">VTOL 飞行器，改变旋翼方向在悬停与前飞间切换；把直升机垂直起降能力与固定翼速度、航程结合；挑战是气动干扰与过渡期气动问题；机型 V-22、AW-609、V-280</span></li>
+          <li><span class="kt">高速直升机</span><span class="kd">复合式或共轴式旋翼结构 + 辅助推力装置（螺旋桨、涵道风扇、喷气发动机），兼顾高速与垂直起降/悬停/低速能力</span></li>
+          <li><span class="kt">X2（西科斯基）</span><span class="kd">共轴式复合：两个反转四叶旋翼 + 后置螺旋桨，1 台 LHTEC T800；目标 250 kt（约 460 km/h）；2008 首飞、2010 创非官方纪录 260 kt（约 480 km/h）；派生 S-97、SB&gt;1</span></li>
+          <li><span class="kt">X3（空客）</span><span class="kd">单旋翼式复合：一对前置螺旋桨 + 一对辅助机翼，2 台 RTM322-01；目标巡航 220 kt（约 407 km/h）；2010 首飞、2013 创官方纪录 255 kt（约 472 km/h）</span></li>
+          <li><span class="kt">eVTOL 定义与目标</span><span class="kd">电动垂直起降飞行器，亦称空中出租车/飞行汽车；电力驱动多个螺旋桨或旋翼，追求低噪声、低排放、高效率</span></li>
+          <li><span class="kt">eVTOL 现状</span><span class="kd">Joby Aviation（美）、Lilium（德）、Vertical Aerospace（英）、亿航智能（中）、峰飞航空（中）；2021 年 8 月超过 300 种项目，2023 年已有 800 多种</span></li>
+          <li><span class="kt">eVTOL 三分类</span><span class="kd">按用途（载人/无人）、按动力类型（全电动/混合动力）、按旋翼结构（单旋翼/复合式/共轴式/多旋翼）</span></li>
+          <li><span class="kt">与直升机的关系</span><span class="kd">同为垂直起降飞行器，都需解决悬停、过渡、巡航；区别在电动驱动、分布式推进、自动化控制；共同问题是电池技术、空域管理、认证标准、社会接受度——需借鉴并创新直升机技术</span></li>
+          <li><span class="kt">火星直升机</span><span class="kd">NASA"机智号"：火星大气密度仅为地球 1%（需更大桨叶面积与更快转速）、重力为地球 40%（影响重量与结构）、温度 −90 ℃~20 ℃ 剧烈变化（材料要求高）</span></li>
+          <li><span class="kt">跨介质飞行器</span><span class="kd">跨速域（短距离瞬时低跨超）、跨空域（天地往返、地外起落）、跨介质（入水瞬间强载荷对速度、角度、结构与材料极为苛刻）</span></li>
+          <li><span class="kt">军用飞行汽车</span><span class="kd">结合直升机与军用汽车优点：高速、高机动、高火力、高防护；美国 Advanced Tactics 公司 2014 年完成"变形黑骑士"飞行卡车首飞</span></li>
+        </ul>
+      </li>
+
+      <li class="branch" style="--accent:var(--c7)">
+        <div class="hd" onclick="tg(this)">
+          <span class="num">1.6</span><span class="ttl">直升机空气动力学研究内容</span>
+          <span class="tag">三条途径</span><span class="arrow">▾</span>
+        </div>
+        <ul class="kids">
+          <li><span class="kt">学科定义</span><span class="kd">阐明直升机与周围空气相互作用的空气动力现象、研究不同飞行状态下的气动载荷、估算飞行性能和分析直升机品质的科学</span></li>
+          <li><span class="kt">与固定翼对比</span><span class="kd">固定翼空气动力学具有定常、对称等特性；直升机因旋翼 + 尾桨等部件，受力与流场尤为复杂，故研究更关键</span></li>
+          <li><span class="kt">理论研究</span><span class="kd">主要关注旋翼空气动力学：研究旋翼与空气相互作用现象与机理，建立理论与分析模型；当前及未来长期集中在自由尾迹方法与旋翼 CFD 方法</span></li>
+          <li><span class="kt">应用研究</span><span class="kd">以直升机研制为目标的应用基础研究：气动特性、气动弹性、气动噪声、结冰模拟、流动控制，以及结合飞行原理的飞行力学研究；开发先进设计与分析工具、提炼新设计概念</span></li>
+          <li><span class="kt">试验研究</span><span class="kd">三类：理论验证试验；部件或全机气动特性分析、校核与验证试验；试验技术本身的基础与应用研究</span></li>
+          <li><span class="kt">试验不可替代的原因</span><span class="kd">流场复杂、振动严重、气动弹性耦合加剧难度；计算结果与实际仍有差距 → 许多重要问题需全尺寸飞行试验，否则研制周期延长、风险增大</span></li>
+          <li><span class="kt">全书路线图</span><span class="kd">基本参数与工作原理 → 滑流（动量）、叶素、涡流理论 → CFD → 飞行性能计算 → 特殊飞行状态 → 气动设计、气动噪声 → 试验方法</span></li>
+        </ul>
+      </li>
+
+      <li class="branch" style="--accent:var(--c1)">
+        <div class="hd" onclick="tg(this)">
+          <span class="num">1.7</span><span class="ttl">习题（6 题自检）</span>
+          <span class="tag">考核点</span><span class="arrow">▾</span>
+        </div>
+        <ul class="kids">
+          <li><span class="kt">Q1</span><span class="kd">列举直升机的构型特点以及其军用、民用价值</span></li>
+          <li><span class="kt">Q2</span><span class="kd">总结提炼直升机发展历史背后的技术发展脉络</span></li>
+          <li><span class="kt">Q3</span><span class="kd">简述直升机的技术发展，分析每个阶段的发展特点</span></li>
+          <li><span class="kt">Q4</span><span class="kd">简述现代直升机的划代及对应关键技术和指标</span></li>
+          <li><span class="kt">Q5</span><span class="kd">未来直升机发展与 eVTOL 的发展有什么异同？</span></li>
+          <li><span class="kt">Q6</span><span class="kd">简述直升机空气动力学的研究内容</span></li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+
+  <footer>整理自《直升机空气动力学》（招启军、徐国华、王博 著）第 1 章 · 书内 p1–p19</footer>
+</div>
+
+<script>
+function tg(el){ el.parentElement.classList.toggle('collapsed'); }
+function toggleAll(collapse){
+  document.querySelectorAll('.branch').forEach(function(b){
+    b.classList.toggle('collapsed', collapse);
+  });
+}
+</script>
+</body>
+</html>
