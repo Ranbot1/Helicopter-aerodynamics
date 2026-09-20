@@ -4,7 +4,7 @@
 
 ## 站点入口
 
-> ### 👉 [ranbot1.github.io/Helicopter-aerodynamics](https://ranbot1.github.io/Helicopter-aerodynamics/)
+> ### [ranbot1.github.io/Helicopter-aerodynamics](https://ranbot1.github.io/Helicopter-aerodynamics/)
 
 已上线。也可以直接点这里进仓库看源码：[Ranbot1/Helicopter-aerodynamics](https://github.com/Ranbot1/Helicopter-aerodynamics)
 
