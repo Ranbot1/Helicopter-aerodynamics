@@ -139,6 +139,14 @@ body {
   background: var(--hp-bg-soft);
 }
 
+.markdown-section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 18px auto;
+  border-radius: 8px;
+}
+
 .mermaid-wrap {
   background: #fbfdff;
   border: 1px solid var(--hp-line);
